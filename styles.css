@@ -6,7 +6,7 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   background-color: #e5e7eb;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
   overflow-x: hidden;
 }
 
@@ -20,35 +20,37 @@ body {
   width: 100%;
 }
 
-.header {
-  background-color: #f0f6fc;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.container {
-  max-width: calc(100% - 2px);
+.custom-container {
+  max-width: clamp(1200px, 100vw, 1920px);
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 clamp(0.5rem, 0.833vw, 1rem);
   width: 100%;
+}
+
+.header {
+  background-color: #f0f6fc;
+  border-bottom: 1px solid #e5e7eb;
+  padding: clamp(0.5rem, 0.75vw, 0.75rem) 0;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: clamp(3rem, 4vw, 4rem);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: clamp(0.25rem, 0.5vw, 0.5rem);
 }
 
 .logo-img {
-  width: 50%;
-  height: 50%;
-  border-radius: 5.625rem;
+  width: clamp(40%, 5vw, 50%);
+  height: clamp(40%, 5vw, 50%);
+  border-radius: clamp(4rem, 5vw, 5.625rem);
   object-fit: cover;
 }
 
@@ -59,8 +61,8 @@ body {
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
-    gap: 2rem;
-    font-size: 0.875rem;
+    gap: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.75rem, 0.833vw, 0.875rem);
     color: #6b7280;
   }
 
@@ -78,56 +80,54 @@ body {
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: clamp(0.25rem, 0.5vw, 0.5rem);
   cursor: pointer;
 }
 
 .user-img {
-  width: 2rem;
-  height: 2rem;
+  width: clamp(1.5rem, 2vw, 2rem);
+  height: clamp(1.5rem, 2vw, 2rem);
   border-radius: 9999px;
   object-fit: cover;
 }
 
 .user-name {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
   color: #6b7280;
 }
 
 .chevron-icon {
-  font-size: 0.5rem;
+  font-size: clamp(0.375rem, 0.5vw, 0.5rem);
 }
 
 .main-content {
-  padding: clamp(0.5rem, 1vw, 1rem);
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
 }
 
 .welcome-section .welcome-header,
 .hero-section .hero-header,
 .recommended-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Changed to center text */
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+  padding: 0 clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .welcome-header h2,
 .recommended-header h2,
 .category-section h2 {
-  font-size: clamp(1.5rem, 1.875vw, 2rem);
+  font-size: clamp(1.25rem, 1.875vw, 2rem);
   font-weight: 600;
-  color: #000000; /* Changed to black */
+  color: #000000;
   line-height: 1.2;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin: clamp(0.25rem, 0.5vw, 0.5rem) 0;
 }
-
 
 .welcome-header a,
 .hero-header a,
 .recommended-header a {
-  font-size: clamp(0.875rem, 1.042vw, 1.125rem);
+  font-size: clamp(0.75rem, 1.042vw, 1.125rem);
   color: #49BBBD;
   text-decoration: none;
   font-weight: 700;
@@ -141,28 +141,32 @@ body {
 }
 
 .hero-content {
-  display: flex-center;
-  flex-direction: table;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  
-  /* align-items: center; */
- 
-  gap: 10rem;
-
+  align-items: center;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 2rem);
 }
 
 .hero-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 110%;
+  text-align: center;
+  max-width: 100%;
 }
-.hero-header h2,
-.hero-text p {
-  font-size: clamp(1rem, 1.25vw, 1.125rem);
+
+.hero-header h2 {
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
   color: #d1d5db;
   line-height: 1.6;
-  margin: 1.5rem 0;
+  margin: clamp(0.5rem, 0.75vw, 0.75rem) 0;
+  text-align: center; /* Ensure centered */
+}
+
+.hero-text p {
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: clamp(0.5rem, 0.75vw, 0.75rem) 0;
 }
 
 .hero-btn {
@@ -170,12 +174,13 @@ body {
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  font-size: clamp(0.875rem, 1.042vw, 1.125rem);
+  padding: clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.042vw, 1.125rem);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Ensure centered */
 }
 
 .hero-btn:hover {
@@ -185,19 +190,18 @@ body {
 
 .card-grid {
   display: grid;
-  gap: clamp(0.75rem, 1.25vw, 1rem);
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 100%;
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr));
+  padding: 0 clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .course-card {
   background: white;
-  border-radius: 0.625vw;
+  border-radius: clamp(0.5vw, 0.625vw, 0.75vw);
   box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
-  padding: clamp(0.75rem, 1vw, 1rem);
-  position: relative;
+  padding: clamp(0.5rem, 1vw, 1rem);
   width: 100%;
-  max-width: 27.552vw;
+  max-width: clamp(200px, 27.552vw, 300px);
   height: auto;
   aspect-ratio: 27.552 / 24.688;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -210,18 +214,17 @@ body {
 
 .course-image {
   width: 100%;
-  height: 16.5625vw;
+  height: clamp(120px, 16.5625vw, 180px);
   object-fit: cover;
-  border-radius: 1.042vw;
-  margin-bottom: 0.5rem;
+  border-radius: clamp(0.75vw, 1.042vw, 1.25vw);
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
 }
 
 .course-card h3 {
-  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.833vw, 0.875rem);
   font-weight: 500;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  max-width: 21.458vw;
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+  max-width: clamp(160px, 21.458vw, 230px);
   line-height: 1.8;
   color: #1f2937;
 }
@@ -229,20 +232,20 @@ body {
 .instructor-info {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.625rem;
+  gap: clamp(0.25rem, 0.5vw, 0.5rem);
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+  margin-top: clamp(0.5rem, 0.625vw, 0.625rem);
 }
 
 .instructor-img {
-  width: 2.188vw;
-  height: 2.188vw;
+  width: clamp(1.5vw, 2.188vw, 2.5vw);
+  height: clamp(1.5vw, 2.188vw, 2.5vw);
   border-radius: 9999px;
   object-fit: cover;
 }
 
 .instructor-info span {
-  font-size: clamp(0.625rem, 0.729vw, 0.75rem);
+  font-size: clamp(0.5rem, 0.729vw, 0.75rem);
   color: #6b7280;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -250,69 +253,68 @@ body {
 
 .progress-bar {
   background-color: #d1d5db;
-  height: 0.417vw;
-  border-radius: 0.104vw;
-  margin-bottom: 0.25rem;
-  width: 100%;
-  max-width: 25.156vw;
-  margin-top: 0.625rem;
+  height: clamp(0.3vw, 0.417vw, 0.5vw);
+  border-radius: clamp(0.075vw, 0.104vw, 0.125vw);
+  margin-bottom: clamp(0.2rem, 0.25vw, 0.25rem);
+  max-width: clamp(180px, 25.156vw, 270px);
+  margin-top: clamp(0.5rem, 0.625vw, 0.625rem);
 }
 
 .progress-fill {
   background-color: #7dd3fc;
   height: 100%;
-  border-radius: 0.104vw;
+  border-radius: clamp(0.075vw, 0.104vw, 0.125vw);
 }
 
 .w60 { width: 60%; }
 
 .lesson-count {
-  font-size: clamp(0.625rem, 0.729vw, 0.75rem);
+  font-size: clamp(0.5rem, 0.729vw, 0.75rem);
   text-align: right;
   color: #6b7280;
-  width: 4.844vw;
-  height: 1.406vw;
-  margin-top: 0.625rem;
+  width: clamp(3.5vw, 4.844vw, 5.5vw);
+  height: clamp(1vw, 1.406vw, 1.5vw);
+  margin-top: clamp(0.5rem, 0.625vw, 0.625rem);
   margin-left: auto;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
 .course-duration {
-  font-size: clamp(0.625rem, 0.729vw, 0.75rem);
+  font-size: clamp(0.5rem, 0.729vw, 0.75rem);
   color: #6b7280;
-  margin-bottom: 0.25rem;
-  width: 3.229vw;
-  height: 1.146vw;
+  margin-bottom: clamp(0.2rem, 0.25vw, 0.25rem);
+  width: clamp(2.5vw, 3.229vw, 3.5vw);
+  height: clamp(0.8vw, 1.146vw, 1.2vw);
   font-weight: 500;
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
 
 .course-price {
-  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.833vw, 0.875rem);
   font-weight: 600;
   color: #1f2937;
-  width: 2.188vw;
-  height: 0.99vw;
-  margin-top: 0.729vw;
+  width: clamp(1.5vw, 2.188vw, 2.5vw);
+  height: clamp(0.7vw, 0.99vw, 1.1vw);
+  margin-top: clamp(0.5vw, 0.729vw, 0.8vw);
   letter-spacing: 0.02em;
 }
 
 .carousel-controls {
   display: flex;
   justify-content: flex-end;
-  gap: 0.521vw;
-  margin-top: 1vw;
-  margin-right: clamp(0.5rem, 6.51vw, 1rem);
+  gap: clamp(0.4vw, 0.521vw, 0.6vw);
+  margin-top: clamp(0.75vw, 1vw, 1.25vw);
+  padding: 0 clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .carousel-btn {
   background-color: #49BBBD80;
   border: none;
-  border-radius: 0.208vw;
-  width: 2.604vw;
-  height: 2.604vw;
+  border-radius: clamp(0.15vw, 0.208vw, 0.25vw);
+  width: clamp(2vw, 2.604vw, 3vw);
+  height: clamp(2vw, 2.604vw, 3vw);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,81 +328,74 @@ body {
 }
 
 .welcome-section {
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-top: 0;
-  margin-bottom: 50px;
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
-  min-height: 40.89vh;
-  background: #9DCCFF; /* Updated background color */
+  background: rgba(157, 204, 255, 0.2);
+  border-radius: clamp(12px, 0.833vw, 16px);
   padding: clamp(0.5rem, 1vw, 1rem);
+  margin: clamp(0.75rem, 1vw, 1rem) auto;
+  width: 100%;
+  max-width: clamp(1200px, 100vw, 1920px);
+  min-height: 40.89vh;
 }
 
 .hero-section {
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-top: 0;
-  margin-bottom: 50px;
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
-  min-height: 40.89vh;
   background: #252641;
-  padding: clamp(1rem, 2vw, 2rem);
-  border-radius: 16px;
+  border-radius: clamp(12px, 0.833vw, 16px);
+  padding: clamp(1.5rem, 4vw, 4rem);
+  margin: clamp(0.75rem, 1vw, 1rem) 119px; /* Fixed 119px left/right margins */
+  text-align: center; /* Centralize all text */
+  min-height: 30vh; /* Reduced height */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.recommended-section {
-  margin-top: 0;
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  margin-bottom: clamp(2rem, 3vw, 3rem);
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
-  min-height: 42vh;
-  border-radius: 0.625vw;
+.recommended-section,
+.student-viewing-section {
+  background: rgba(157, 204, 255, 0.2);
+  border-radius: clamp(0.5vw, 0.625vw, 0.75vw);
   padding: clamp(0.5rem, 1vw, 1rem);
-  background: rgba(157, 204, 255, 0.9);
+  margin: clamp(0.75rem, 1vw, 1rem) auto;
+  width: 100%;
+  max-width: clamp(1200px, 100vw, 1920px);
+  min-height: 42vh;
 }
 
-.student-viewing-section {
-  margin-top: 0;
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  margin-bottom: clamp(2rem, 3vw, 3rem);
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
-  min-height: 42vh;
-  border-radius: 0.625vw;
+.personal-development-section {
+  background: transparent;
+  border-radius: clamp(0.5vw, 0.625vw, 0.75vw);
   padding: clamp(0.5rem, 1vw, 1rem);
-  background: rgba(157, 204, 255, 0.9);
+  margin: clamp(0.75rem, 1vw, 1rem) auto;
+  width: 100%;
+  max-width: clamp(1200px, 100vw, 1920px);
+  min-height: 42vh;
 }
 
 .category-section {
-  margin-top: 0;
-  margin-left: clamp(0.5rem, 1vw, 1rem);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  width: calc(100% - clamp(1rem, 3vw, 2rem));
-  height: 834px;
-  background: rgba(240, 246, 252, 0.9);
+  background: #ffffff;
+  border-radius: clamp(12px, 0.833vw, 16px);
   padding: clamp(1rem, 2vw, 2rem);
-  border: none;
-  border-radius: 16px;
+  margin: clamp(0.75rem, 1vw, 1rem) auto;
+  width: 100%;
+  max-width: clamp(1200px, 100vw, 1920px);
+  height: 834px;
   box-shadow: none;
 }
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 300px);
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  width: 100%;
-  height: calc(100% - 3.5rem);
-  justify-content: start;
+  grid-template-columns: repeat(4, clamp(250px, 25vw, 300px));
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  padding: 0 clamp(0.5rem, 0.75vw, 0.75rem);
+  height: calc(100% - clamp(3rem, 3.5vw, 3.5rem));
+  justify-content: center;
 }
 
 .category-card {
   background: white;
-  border-radius: 16px;
+  border-radius: clamp(12px, 0.833vw, 16px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
+  padding: clamp(0.75rem, 1.5vw, 1.5rem);
   text-align: center;
-  width: 300px;
-  height: 320px;
+  width: clamp(250px, 25vw, 300px);
+  height: clamp(280px, 30vw, 320px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -410,14 +405,14 @@ body {
 }
 
 .category-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem;
-  border-radius: 10px;
+  width: clamp(48px, 5vw, 56px);
+  height: clamp(48px, 5vw, 56px);
+  margin: 0 auto clamp(0.75rem, 1vw, 1rem);
+  border-radius: clamp(8px, 0.833vw, 10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: 700;
 }
 
@@ -429,113 +424,89 @@ body {
 .acting-icon { background-color: #d1fae5; color: #10b981; }
 
 .category-card h3 {
-  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
   font-weight: 600;
   color: #1f2937;
-  margin: 0 auto 0.5rem;
-  text-align: center;
-  width: 100px;
-  height: 36px;
+  margin: 0 auto clamp(0.25rem, 0.5vw, 0.5rem);
+  width: clamp(80px, 10vw, 100px);
+  height: clamp(32px, 3.5vw, 36px);
   letter-spacing: 0.02em;
 }
 
 .category-card p {
-  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.833vw, 0.875rem);
   color: #6b7280;
   line-height: 1.6;
-  width: 260px;
-  height: 84px;
+  width: clamp(220px, 25vw, 260px);
+  height: clamp(72px, 8vw, 84px);
   margin: 0 auto;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
 .footer {
-  margin-top: 0;
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
   background: #252641;
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-top: #252641;
-
-  text-align: center;
   color: #ffffff;
-}
-
-.footer {
-  margin-top: 0;
-  margin-left: clamp(0.5rem, 2vw, 1rem);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  width: calc(100% - clamp(1rem, 4vw, 2rem));
- background: #252641;
-
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-top: 1px solid #e5e7eb;
-  color: #6b7280;
+  padding: clamp(0.75rem, 1.5vw, 1.5rem);
+  margin: clamp(0.75rem, 1vw, 1rem) auto;
+  width: 100%;
+  max-width: clamp(1200px, 100vw, 1920px);
 }
 
 .footer-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .footer-logo {
-  flex:center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  
+  gap: clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .footer-logo-img {
- object-position: center;
-    width: 133px;
-    height: 92px;
-    object-fit: scale-down;
+  width: clamp(120px, 15vw, 150px);
+  height: clamp(80px, 10vw, 92px);
+  object-fit: scale-down;
 }
 
 .footer-divider {
   width: 1px;
-  height: 120px;
+  height: clamp(40px, 5vw, 50px);
   background-color: #e5e7eb;
 }
 
-.footer-right {
-  flex: 1;
-  text-align: center;
-}
-
 .footer-title {
-  font-size: clamp(0.9rem, 0.25vw, 0.125rem);
+  font-size: clamp(0.75rem, 0.25vw, 0.9rem);
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .newsletter {
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .newsletter p {
-  font-size: clamp(0.875rem, 1.042vw, 1rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(0.75rem, 1.042vw, 1rem);
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
 }
 
 .newsletter-form {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: clamp(0.25rem, 0.5vw, 0.5rem);
 }
 
 .newsletter-input {
   background-color: rgba(240, 246, 252, 0.9);
   border: 1px solid #d1d5db;
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  font-size: clamp(0.875rem, 1.042vw, 1rem);
-  width: 200px;
+  border-radius: clamp(16px, 2vw, 20px);
+  padding: clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(0.75rem, 1.042vw, 1rem);
+  width: clamp(180px, 20vw, 200px);
   color: #6b7280;
 }
 
@@ -547,9 +518,9 @@ body {
   background-color: #49BBBD;
   color: #ffffff;
   border: none;
-  border-radius: 20px;
-  padding: 0.5rem 1.5rem;
-  font-size: clamp(0.875rem, 1.042vw, 1rem);
+  border-radius: clamp(16px, 2vw, 20px);
+  padding: clamp(0.25rem, 0.5vw, 0.5rem) clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.042vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
@@ -563,14 +534,14 @@ body {
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  margin-bottom: 1rem;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  margin-bottom: clamp(0.5rem, 0.75vw, 0.75rem);
 }
 
 .footer-links a {
   color: #49BBBD;
   text-decoration: none;
-  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.833vw, 0.875rem);
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -580,25 +551,24 @@ body {
 }
 
 .footer-copyright {
-  font-size: clamp(0.75rem, 0.833vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.833vw, 0.875rem);
   line-height: 1.5;
   font-weight: 400;
 }
 
-
-/* Media Queries */
+/* Media Queries for Responsiveness */
 @media (max-width: 1440px) {
-  body { font-size: 0.875rem; }
+  body { font-size: clamp(0.75rem, 1.111vw, 0.875rem); }
 
-  .container { max-width: 100%; padding: 0 2%; }
+  .custom-container { max-width: clamp(1000px, 97.222vw, 1400px); padding: 0 2%; }
 
-  .header-content { height: 8vw; }
+  .header-content { height: clamp(6vw, 7vw, 8vw); }
 
-  .logo-container { width: 6.5vw; height: 4.8vw; }
+  .logo-container { width: clamp(5vw, 6.5vw, 7vw); height: clamp(3.5vw, 4.8vw, 5vw); }
 
-  .nav-links { gap: 1.5vw; }
+  .nav-links { gap: clamp(0.75vw, 1.5vw, 1.75vw); }
 
-  .nav-links a { font-size: 0.9vw; }
+  .nav-links a { font-size: clamp(0.625vw, 0.833vw, 0.9vw); }
 
   .welcome-section,
   .hero-section,
@@ -607,95 +577,53 @@ body {
   .student-viewing-section,
   .category-section,
   .footer {
-    width: calc(100% - 4%);
-    margin-left: 2%;
-    margin-right: 2%;
-    min-height: 45vh;
-  }
-
-  .welcome-section,
-  .hero-section { 
-    margin-bottom: clamp(2rem, 3vw, 3rem); 
-  }
-
-  .hero-section {
-    border-radius: 12px;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .hero-image {
-    height: 25vh;
-    border-radius: 12px;
-  }
-
-  .recommended-section,
-  .personal-development-section,
-  .student-viewing-section {
-    margin-top: 0;
-    margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
-  }
-
-  .category-section {
-    margin-top: 0;
-    margin-left: clamp(0.5rem, 1vw, 1rem);
-    width: calc(100% - clamp(1rem, 3vw, 2rem));
-    height: 720px;
-    padding: clamp(0.75rem, 1.5vw, 1.5rem);
-    border-radius: 12px;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
-    height: calc(100% - 3.5rem);
-  }
-
-  .category-card {
-    width: 260px;
-    height: 280px;
-    padding: clamp(0.75rem, 1vw, 1rem);
-    border-radius: 12px;
-  }
-
-  .category-icon { width: 32px; height: 32px; font-size: clamp(1rem, 1.25vw, 1.25rem); }
-
-  .category-card h3 { width: 90px; height: 32px; font-size: clamp(0.875rem, 1vw, 1rem); }
-
-  .category-card p { width: 220px; height: 72px; }
-
-  .lesson-count { width: 5vw; }
-
-  .footer {
-    padding: clamp(0.75rem, 1.25vw, 1.25rem);
+    max-width: clamp(1000px, 97.222vw, 1400px);
+    margin: clamp(0.5rem, 0.833vw, 0.75rem) auto;
     min-height: auto;
   }
 
-  .footer p,
-  .footer-links a {
-    font-size: clamp(0.625rem, 0.729vw, 0.75rem);
+  .hero-section {
+    margin: clamp(0.5rem, 0.833vw, 0.75rem) 119px;
+    padding: clamp(1rem, 3vw, 3rem);
+    min-height: 28vh; /* Slightly reduced */
   }
 
-  .footer-links {
-    gap: clamp(0.75rem, 1vw, 1rem);
-    margin-top: clamp(0.5rem, 0.833vw, 0.75rem);
+  .category-section { height: 720px; }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 22vw, 260px), 1fr));
+    justify-content: center;
+    height: auto;
   }
+
+  .category-card {
+    width: clamp(220px, 22vw, 260px);
+    height: clamp(240px, 25vw, 280px);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    border-radius: clamp(10px, 0.833vw, 12px);
+  }
+
+  .category-icon { width: clamp(28px, 3vw, 32px); height: clamp(28px, 3vw, 32px); font-size: clamp(0.875rem, 1.25vw, 1.25rem); }
+
+  .category-card h3 { width: clamp(80px, 9vw, 90px); height: clamp(28px, 3vw, 32px); font-size: clamp(0.75rem, 1vw, 1rem); }
+
+  .category-card p { width: clamp(180px, 20vw, 220px); height: clamp(60px, 7vw, 72px); }
+
+  .lesson-count { width: clamp(4vw, 5vw, 5.5vw); }
 }
 
 @media (max-width: 1280px) {
-  body { font-size: 0.8125rem; }
+  body { font-size: clamp(0.6875rem, 1vw, 0.8125rem); }
 
-  .container { max-width: 100%; padding: 0 3%; }
+  .custom-container { max-width: clamp(900px, 93.75vw, 1200px); padding: 0 3%; }
 
-  .header-content { height: 9vw; }
+  .header-content { height: clamp(7vw, 8vw, 9vw); }
 
-  .logo-container { width: 7vw; height: 5vw; }
+  .logo-container { width: clamp(5.5vw, 6.5vw, 7vw); height: clamp(4vw, 4.5vw, 5vw); }
 
-  .nav-links { gap: 1vw; }
+  .nav-links { gap: clamp(0.5vw, 0.833vw, 1vw); }
 
-  .nav-links a { font-size: 0.8vw; }
+  .nav-links a { font-size: clamp(0.5vw, 0.625vw, 0.8vw); }
 
   .welcome-section,
   .hero-section,
@@ -704,248 +632,145 @@ body {
   .student-viewing-section,
   .category-section,
   .footer {
-    width: calc(100% - 6%);
-    margin-left: 3%;
-    margin-right: 3%;
-    min-height: 48vh;
-  }
-
-  .welcome-section,
-  .hero-section { 
-    margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem); 
+    max-width: clamp(900px, 93.75vw, 1200px);
+    margin: clamp(0.5rem, 0.833vw, 0.75rem) auto;
   }
 
   .hero-section {
-    border-radius: 10px;
+    margin: clamp(0.5rem, 0.833vw, 0.75rem) 100px; /* Slightly reduced margins */
+    padding: clamp(0.75rem, 2vw, 2rem);
+    min-height: 26vh; /* Further reduced */
   }
 
-  .hero-content {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  .recommended-section,
-  .personal-development-section,
-  .student-viewing-section {
-    margin-top: 0;
-    margin-bottom: clamp(1rem, 2vw, 2rem);
-  }
+  .category-section { height: 680px; }
 
-  .category-section {
-    margin-top: 0;
-    margin-left: clamp(0.5rem, 1vw, 1rem);
-    width: calc(100% - clamp(1.5rem, 3vw, 3rem));
-    height: 680px;
-    padding: clamp(0.5rem, 1vw, 1rem);
-    border-radius: 10px;
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 20vw, 240px), 1fr));
+    justify-content: center;
+    height: auto;
   }
-
-  .category-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 300px)); }
 
   .category-card {
-    width: 240px;
-    height: 260px;
+    width: clamp(200px, 20vw, 240px);
+    height: clamp(220px, 23vw, 260px);
     padding: clamp(0.5rem, 0.833vw, 0.75rem);
-    border-radius: 10px;
+    border-radius: clamp(8px, 0.625vw, 10px);
   }
 
-  .category-icon { width: 30px; height: 30px; font-size: clamp(0.875rem, 1vw, 1rem); }
+  .category-icon { width: clamp(26px, 2.5vw, 30px); height: clamp(26px, 2.5vw, 30px); font-size: clamp(0.75rem, 1vw, 1rem); }
 
-  .category-card h3 { width: 80px; height: 30px; font-size: clamp(0.75rem, 0.833vw, 0.875rem); }
+  .category-card h3 { width: clamp(70px, 8vw, 80px); height: clamp(26px, 2.5vw, 30px); font-size: clamp(0.625rem, 0.833vw, 0.875rem); }
 
-  .category-card p { width: 200px; height: 64px; }
+  .category-card p { width: clamp(160px, 18vw, 200px); height: clamp(56px, 6vw, 64px); }
 
-  .lesson-count { width: 5.5vw; }
-
-  .footer {
-    padding: clamp(0.5rem, 0.833vw, 1rem);
-  }
-
-  .footer p,
-  .footer-links a {
-    font-size: clamp(0.5625rem, 0.625vw, 0.625rem);
-  }
-
-  .footer-links {
-    gap: clamp(0.5rem, 0.75vw, 0.75rem);
-    margin-top: clamp(0.25rem, 0.417vw, 0.5rem);
-  }
+  .lesson-count { width: clamp(4.5vw, 5vw, 5.5vw); }
 }
 
 @media (max-width: 768px) {
-  body { font-size: 0.75rem; }
+  body { font-size: clamp(0.625rem, 0.833vw, 0.75rem); }
 
-  .container { padding: 0 4%; }
+  .custom-container { padding: 0 4%; }
 
-  .header-content { flex-direction: column; height: auto; padding: 1rem 0; }
+  .header-content { flex-direction: column; height: auto; padding: clamp(0.5rem, 0.833vw, 0.75rem) 0; }
 
-  .logo-container { width: 15vw; height: 10vw; }
+  .logo-container { width: clamp(12vw, 15vw, 18vw); height: clamp(8vw, 10vw, 12vw); }
 
-  .user-profile { margin-top: 0.5rem; }
+  .user-profile { margin-top: clamp(0.25rem, 0.5vw, 0.5rem); }
 
   .welcome-section,
-  .hero-section,
   .recommended-section,
   .personal-development-section,
   .student-viewing-section,
   .category-section,
   .footer {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 4%;
-    min-height: auto;
-  }
-
-  .welcome-section,
-  .hero-section { 
-    margin-bottom: clamp(1rem, 2vw, 2rem); 
+    max-width: 100%;
+    margin: clamp(0.25rem, 0.5vw, 0.5rem) 0;
+    padding: clamp(0.5rem, 1.25vw, 1rem);
   }
 
   .hero-section {
-    border-radius: 8px;
+    margin: clamp(0.25rem, 0.5vw, 0.5rem) clamp(60px, 8vw, 80px); /* Scaled down margins */
+    padding: clamp(0.5rem, 1.5vw, 1.5rem);
+    min-height: 25vh; /* Reduced for mobile */
   }
 
-  .hero-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .category-section { height: auto; }
 
-  .hero-image {
-    height: 15vh;
-    border-radius: 8px;
-  }
-
-  .recommended-section,
-  .personal-development-section,
-  .student-viewing-section {
-    margin-top: 0;
-    margin-bottom: clamp(1rem, 2vw, 2rem);
-  }
-
-  .category-section {
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 30vw, 220px), 1fr));
+    justify-content: center;
     height: auto;
-    padding: clamp(0.5rem, 1.25vw, 1rem);
-    border-radius: 8px;
   }
-
-  .category-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
   .category-card {
     width: 100%;
-    max-width: 220px;
-    height: 240px;
+    max-width: clamp(180px, 30vw, 220px);
+    height: clamp(200px, 32vw, 240px);
     padding: clamp(0.5rem, 1.25vw, 0.75rem);
-    border-radius: 8px;
+    border-radius: clamp(6px, 0.833vw, 8px);
   }
 
-  .category-icon { width: 28px; height: 28px; font-size: clamp(0.75rem, 0.833vw, 0.875rem); }
+  .category-icon { width: clamp(24px, 4vw, 28px); height: clamp(24px, 4vw, 28px); font-size: clamp(0.625rem, 0.833vw, 0.875rem); }
 
-  .category-card h3 { width: 70px; height: 28px; font-size: clamp(0.625rem, 0.729vw, 0.75rem); }
+  .category-card h3 { width: clamp(60px, 10vw, 70px); height: clamp(24px, 4vw, 28px); font-size: clamp(0.5rem, 0.729vw, 0.75rem); }
 
-  .category-card p { width: 180px; height: 56px; }
+  .category-card p { width: clamp(140px, 25vw, 180px); height: clamp(48px, 8vw, 56px); }
 
   .carousel-controls { margin-right: 0; justify-content: center; }
 
-  .carousel-btn { width: 8vw; height: 8vw; }
+  .carousel-btn { width: clamp(6vw, 8vw, 10vw); height: clamp(6vw, 8vw, 10vw); }
 
-  .lesson-count { width: 20vw; }
-
-  .footer {
-    padding: clamp(0.5rem, 1.25vw, 1rem);
-  }
-
-  .footer p,
-  .footer-links a {
-    font-size: clamp(0.625rem, 0.729vw, 0.75rem);
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
+  .lesson-count { width: clamp(15vw, 20vw, 25vw); }
 }
 
 @media (max-width: 480px) {
-  body { font-size: 0.6875rem; }
+  body { font-size: clamp(0.5625rem, 0.833vw, 0.6875rem); }
 
-  .container { padding: 0 5%; }
+  .custom-container { padding: 0 5%; }
 
   .card-grid { grid-template-columns: 1fr; }
 
-  .course-card { max-width: 100%; padding: 4vw; }
+  .course-card { max-width: 100%; padding: clamp(3vw, 4vw, 5vw); }
 
-  .course-image { height: 40vw; }
+  .course-image { height: clamp(30vw, 40vw, 50vw); }
 
   .welcome-section,
-  .hero-section { 
-    margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem); 
+  .recommended-section,
+  .personal-development-section,
+  .student-viewing-section,
+  .category-section,
+  .footer {
+    margin: clamp(0.25rem, 0.5vw, 0.5rem) 0;
+    padding: clamp(0.5rem, 1.25vw, 0.75rem);
   }
 
   .hero-section {
-    border-radius: 6px;
+    margin: clamp(0.25rem, 0.5vw, 0.5rem) clamp(20px, 5vw, 40px); /* Minimal margins */
+    padding: clamp(0.5rem, 1vw, 1rem);
+    min-height: 0y auto; /* Minimal height */
   }
 
-  .hero-content {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .hero-image {
-    height: 10vh;
-    border-radius: 6px;
-  }
-
-  .recommended-section,
-  .personal-development-section,
-  .student-viewing-section {
-    margin-top: 0;
-    margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem);
-  }
-
-  .category-section {
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
+  .category-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
     height: auto;
-    padding: clamp(0.5rem, 1.25vw, 0.75rem);
-    border-radius: 6px;
   }
-
-  .category-grid { grid-template-columns: 1fr; }
 
   .category-card {
     width: 100%;
     max-width: 100%;
-    height: 220px;
+    height: clamp(180px, 35vw, 220px);
     padding: clamp(0.5rem, 1.25vw, 0.75rem);
-    border-radius: 6px;
+    border-radius: clamp(5px, 0.833vw, 6px);
   }
 
-  .category-icon { width: 24px; height: 24px; font-size: clamp(0.625rem, 0.729vw, 0.75rem); }
+  .category-icon { width: clamp(20px, 4vw, 24px); height: clamp(20px, 4vw, 24px); font-size: clamp(0.5rem, 0.729vw, 0.75rem); }
 
-  .category-card h3 { width: 60px; height: 24px; font-size: clamp(0.5625rem, 0.625vw, 0.625rem); }
+  .category-card h3 { width: clamp(50px, 10vw, 60px); height: clamp(20px, 4vw, 24px); font-size: clamp(0.5rem, 0.625vw, 0.625rem); }
 
-  .category-card p { width: 160px; height: 48px; }
+  .category-card p { width: clamp(120px, 25vw, 160px); height: clamp(40px, 8vw, 48px); }
 
-  .carousel-btn { width: 10vw; height: 10vw; }
+  .carousel-btn { width: clamp(8vw, 10vw, 12vw); height: clamp(8vw, 10vw, 12vw); }
 
-  .lesson-count { width: 25vw; }
-
-  .footer {
-    padding: clamp(0.5rem, 1.25vw, 0.75rem);
-  }
-
-  .footer p,
-  .footer-links a {
-    font-size: clamp(0.5625rem, 0.625vw, 0.625rem);
-  }
-
-  .footer-links {
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-  }
+  .lesson-count { width: clamp(20vw, 25vw, 30vw); }
 }
