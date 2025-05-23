@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Course Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="styles.css" rel="stylesheet" />
 </head>
 
@@ -19,7 +20,7 @@
             <path d="M12 3v18m9-9H3" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-        <img class="logo-img" src="/Web-Images/Group 235.png" alt="Logo" />
+        <img class="logo-img" src="/Web-Images/Group 235.png" alt="Platform Logo" />
       </div>
 
       <div class="user-profile">
@@ -30,7 +31,7 @@
           <a href="#">Blog</a>
           <a href="#">About Us</a>
         </nav>
-        <img class="user-img" src="/Web-Images/image 12.png" alt="User profile" />
+        <img class="user-img" src="/Web-Images/image 12.png" alt="User profile picture" />
         <span class="user-name">Lina <i class="fas fa-chevron-down chevron-icon"></i></span>
       </div>
     </div>
@@ -40,7 +41,7 @@
     <section class="welcome-section">
       <div class="welcome-header">
         <h2>Welcome back, ready for your next lesson?</h2>
-      <a href="#" style="font-family: Poppins;text-decoration: none;font-weight: 700;font-size: 20px;margin: 68px 120px 56px;line-height: 100%;letter-spacing: 0%;color: #49BBBD;">View history</a>
+        <a href="#" style="font-family: Poppins;text-decoration: none;font-weight: 700;font-size: 20px;margin: 68px 120px 56px;line-height: 100%;letter-spacing: 0%;color: #49BBBD;">View history</a>
       </div>
       <div class="card-grid">
         <div class="course-card">
@@ -87,7 +88,7 @@
     </section>
 
     <section class="category-section">
-      <h2>Choose favourite course from top category</h2>
+      <div class="category-header"><h2>Choose favourite course from top category</h2></div>
       <div class="category-grid">
         <div class="category-card">
           <div class="category-icon design-icon">
@@ -151,48 +152,124 @@
     <section class="recommended-section">
       <div class="recommended-header">
         <h2>Recommended for you</h2>
-        <a href="#">See all</a>
+        <a href="#" class="view-history">See all</a>
       </div>
       <div class="card-grid">
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-duration">3 Weeks</p>
-          <p class="course-price">$50</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-duration">3 Weeks</p>
-          <p class="course-price">$50</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-duration">3 Weeks</p>
-          <p class="course-price">$50</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-duration">3 Weeks</p>
-          <p class="course-price">$50</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -217,48 +294,124 @@
     <section class="personal-development-section">
       <div class="recommended-header">
         <h2>The course in personal development</h2>
-        <a href="#">See all</a>
+        <a href="#" class="view-history">See all</a>
       </div>
       <div class="card-grid">
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -266,48 +419,124 @@
     <section class="student-viewing-section">
       <div class="recommended-header">
         <h2>Students are viewing</h2>
-        <a href="#">See all</a>
+        <a href="#" class="view-history">See all</a>
       </div>
       <div class="card-grid">
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
         <div class="course-card">
-          <img class="course-image" src="/Web-Images/Rectangle 32.png" alt="Course image" />
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="course-duration">3 Weeks</p>
-          <div class="instructor-info">
-            <img class="instructor-img" src="/Web-Images/image 12.png" alt="Instructor" />
-            <span>Lina</span>
+          <div class="course-image-container">
+            <figure class="picture">
+              <img src="/Web-Images/Rectangle 32.png" alt="AWS Certified Solutions Architect course preview" />
+            </figure>
           </div>
-          <p class="course-price">$80</p>
+          <div class="tags">
+            <div class="tag-group">
+              <img src="/Web-Images/Group 259.png" alt="Design icon" height="21" width="21">
+              <span class="tag">Design</span>
+            </div>
+            <div class="tag-group">
+              <img src="/Web-Images/clock.png" alt="Duration icon" height="21" width="21">
+              <span class="course-duration">3 Months</span>
+            </div>
+          </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <div class="instructor-info">
+            <div class="instructor-details">
+              <img src="/Web-Images/image 12.png" alt="Instructor Lina's profile picture" />
+              <div class="instructor-name">Lina</div>
+            </div>
+            <div class="pricing">
+              <span class="discount">$100</span>
+              <span class="course-price">$80</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
